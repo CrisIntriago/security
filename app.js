@@ -4,15 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
- /* MÓDULO dotenv */
- const dotenv = require('dotenv');
+/* MÓDULO dotenv */
+const dotenv = require('dotenv');
 
- /* CARGA DE DATOS DE CONFIGURACION EN MEMORIA */
- dotenv.config();
+/* CARGA DE DATOS DE CONFIGURACION EN MEMORIA */
+dotenv.config();
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+/* REFERENCIA AL MÓDULO */
+const swaggerUi = require('swagger-ui-express')
+/* REFERENCIA AL ARCHIVO GENERADO */
+const swaggerFile = require('./swagger_output.json')
 
 var app = express();
 
@@ -29,13 +33,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+/* CONFIGURACIÓN DE LA RUTA A LA DOCUMENTACIÓN */
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

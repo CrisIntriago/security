@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "swagger-autogen":"node swagger.js",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -12,8 +13,11 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.2",
     "morgan": "~1.9.1",
     "mysql2": "^3.7.0",
-    "sequelize": "^6.35.2"
+    "sequelize": "^6.35.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
   }
 }
