@@ -15,9 +15,9 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "gF6GhF2gCfcea2dA336aGEFDBFd5BH2-",
+    "database": "railway",
+    "host": "viaduct.proxy.rlwy.net",
     "dialect": "mysql"
   }
 }
