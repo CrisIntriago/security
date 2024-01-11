@@ -18,6 +18,7 @@
     "password": "gF6GhF2gCfcea2dA336aGEFDBFd5BH2-",
     "database": "railway",
     "host": "viaduct.proxy.rlwy.net",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "26621"
   }
 }
