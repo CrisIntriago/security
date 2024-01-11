@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "swagger-autogen":"node swagger.js",
-    "start": "node ./bin/www"
+    "packages:install": "npm install sequelize pg && npm install --save-dev sequelize-cli",
+    "start": "npm run packages:install && node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
